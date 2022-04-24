@@ -1,7 +1,53 @@
+import React, { useState } from 'react';
+
 function Search() {
+  const [article, setArticle] = useState({
+    title: '',
+    summary: '',
+  });
+
+  const [myQuery, setMyQuery] = useState('');
+
+  const apiEndpoint = 'https://en.wikipedia.org/w/api.php';
+  const params =
+    'format=json&origin=*&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=';
+
+  async function fetchArticle() {
+    try {
+      const response = await fetch(`${apiEndpoint}?${params}${myQuery}`);
+
+      const fetchData = await response.json();
+      const articleID = Object.keys(fetchData.query.pages);
+
+      setArticle({
+        title: fetchData.query.pages[`${articleID}`].title,
+        summary: fetchData.query.pages[`${articleID}`].extract,
+      });
+    } catch (error) {
+      console.log(`There has been a problem with your fetch operation:${error}`);
+    }
+  }
+
+  const handleInput = (e) => {
+    setMyQuery(() => e.target.value);
+  };
+
   return (
     <div className="search">
-      <h1>Search</h1>
+      <input
+        type="input"
+        placeholder="query"
+        value={myQuery}
+        onChange={(e) => {
+          handleInput(e);
+        }}
+      />
+      <button type="submit" onClick={fetchArticle}>
+        Search
+      </button>
+
+      <h4 className="article-title">{article.title}</h4>
+      <div className="article-body">{article.summary}</div>
     </div>
   );
 }
