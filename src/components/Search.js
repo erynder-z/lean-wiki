@@ -39,6 +39,12 @@ function Search() {
     setMyQuery(() => e.target.value);
   };
 
+  const handleKeypress = (e) => {
+    if (e.keyCode === 13) {
+      fetchArticle();
+    }
+  };
+
   return (
     <div className="search">
       <input
@@ -48,6 +54,7 @@ function Search() {
         onChange={(e) => {
           handleInput(e);
         }}
+        onKeyDown={handleKeypress}
       />
       <button type="submit" onClick={fetchArticle}>
         Search
