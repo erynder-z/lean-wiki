@@ -19,10 +19,17 @@ function Search() {
       const fetchData = await response.json();
       const articleID = Object.keys(fetchData.query.pages);
 
-      setArticle({
-        title: fetchData.query.pages[`${articleID}`].title,
-        summary: fetchData.query.pages[`${articleID}`].extract,
-      });
+      if (fetchData.query.pages[`${articleID}`].extract === undefined) {
+        setArticle({
+          title: fetchData.query.pages[`${articleID}`].title,
+          summary: 'No matching article found...',
+        });
+      } else {
+        setArticle({
+          title: fetchData.query.pages[`${articleID}`].title,
+          summary: fetchData.query.pages[`${articleID}`].extract,
+        });
+      }
     } catch (error) {
       console.log(`There has been a problem with your fetch operation:${error}`);
     }
