@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Featured() {
   const [article, setArticle] = useState({
@@ -33,7 +33,9 @@ function Featured() {
     }
   }
 
-  fetchFeaturedArticle();
+  useEffect(() => {
+    fetchFeaturedArticle();
+  }, []);
 
   return (
     <div className="featured">
