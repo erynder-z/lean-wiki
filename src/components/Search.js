@@ -10,9 +10,7 @@ function Search() {
   });
 
   const [currentQuery, setMyQuery] = useState('');
-  const [queries, setrecentQueries] = useState({
-    recentQueries: [],
-  });
+  const [queries, setQueries] = useState([]);
 
   const apiEndpoint = 'https://en.wikipedia.org/w/api.php';
   const params =
@@ -36,9 +34,7 @@ function Search() {
           summary: fetchData.query.pages[`${articleID}`].extract,
         });
       }
-      setrecentQueries(() => ({
-        recentQueries: [...queries.recentQueries, currentQuery],
-      }));
+      setQueries(() => [...queries, currentQuery]);
     } catch (error) {
       console.log(`There has been a problem with your fetch operation:${error}`);
     }

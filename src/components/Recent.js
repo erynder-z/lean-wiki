@@ -6,8 +6,8 @@ function Recent(props) {
     <div className="recent-container">
       <h4>Recent searches:</h4>
       <ul>
-        {queries.recentQueries.map((item) => (
-          <li key={queries.recentQueries.indexOf(item).toString()} className="query-item">
+        {queries.map((item) => (
+          <li key={queries.indexOf(item).toString()} className="query-item">
             {item}
           </li>
         ))}
@@ -19,7 +19,5 @@ function Recent(props) {
 export default Recent;
 
 Recent.propTypes = {
-  queries: PropTypes.shape({
-    recentQueries: PropTypes.arrayOf(PropTypes.string),
-  }).isRequired,
+  queries: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
