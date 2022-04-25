@@ -1,20 +1,9 @@
+@import-normalize;
+body {
+  min-height: 100vh;
+  background-color: #eeedde;
+}
+
 .App {
   text-align: center;
-}
-
-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 10vh;
-  background-color: rgb(20, 20, 44);
-  color: whitesmoke;
-}
-
-.nav-links {
-  display: flex;
-  width: 40%;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
 }

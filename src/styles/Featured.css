@@ -1,0 +1,21 @@
+.featured {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.readmoreBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: blueviolet;
+  color: whitesmoke;
+}
+
+.readmoreBtn:hover {
+  cursor: pointer;
+}
