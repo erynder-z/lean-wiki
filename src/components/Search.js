@@ -3,8 +3,8 @@ import '../styles/Search.css';
 
 function Search() {
   const [article, setArticle] = useState({
-    title: '',
-    summary: '',
+    title: null,
+    summary: null,
   });
 
   const [myQuery, setMyQuery] = useState('');
@@ -67,15 +67,17 @@ function Search() {
       <div className="article-container">
         <h4 className="article-title">{article.title}</h4>
         <div className="article-body">{article.summary}</div>
-        <div
-          className="readmoreBtn"
-          onClick={openWiki}
-          onKeyDown={openWiki}
-          role="button"
-          tabIndex={0}
-        >
-          Read more on Wikipedia
-        </div>
+        {article.title && article.summary !== 'No matching article found...' && (
+          <div
+            className="readmoreBtn"
+            onClick={openWiki}
+            onKeyDown={openWiki}
+            role="button"
+            tabIndex={0}
+          >
+            Read more on Wikipedia
+          </div>
+        )}
       </div>
     </div>
   );

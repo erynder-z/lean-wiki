@@ -3,9 +3,9 @@ import '../styles/Featured.css';
 
 function Featured() {
   const [article, setArticle] = useState({
-    title: '',
-    displaytitle: '',
-    summary: '',
+    title: null,
+    displaytitle: null,
+    summary: null,
   });
 
   const today = new Date();
@@ -49,15 +49,17 @@ function Featured() {
       <h1>Todays Featured Article</h1>
       <h4 className="article-title">{article.displaytitle}</h4>
       <div className="article-body">{article.summary}</div>
-      <div
-        className="readmoreBtn"
-        onClick={openWiki}
-        onKeyDown={openWiki}
-        role="button"
-        tabIndex={0}
-      >
-        Read more on Wikipedia
-      </div>
+      {article.displaytitle && (
+        <div
+          className="readmoreBtn"
+          onClick={openWiki}
+          onKeyDown={openWiki}
+          role="button"
+          tabIndex={0}
+        >
+          Read more on Wikipedia
+        </div>
+      )}
     </div>
   );
 }
