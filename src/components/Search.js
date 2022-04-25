@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/Search.css';
+import icon from '../assets/layers-search-outline.svg';
 
 function Search() {
   const [article, setArticle] = useState({
@@ -81,6 +82,12 @@ function Search() {
             tabIndex={0}
           >
             Read more on Wikipedia
+          </div>
+        )}
+        {article.title === null && (
+          <div className="placeholder-container">
+            <img src={icon} alt="icon" />
+            <h2>Enter your search below</h2>
           </div>
         )}
       </div>
