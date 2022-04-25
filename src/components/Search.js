@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/Search.css';
 import icon from '../assets/layers-search-outline.svg';
+import Recent from './Recent';
 
 function Search() {
   const [article, setArticle] = useState({
@@ -97,6 +98,7 @@ function Search() {
           </div>
         )}
       </div>
+      <Recent queries={queries} />
     </div>
   );
 }
