@@ -43,28 +43,33 @@ function Search() {
   const handleKeypress = (e) => {
     if (e.keyCode === 13) {
       fetchArticle();
+      e.target.blur();
     }
   };
 
-  const openWiki = () => {
-    window.open(`https://en.wikipedia.org/wiki/${article.title}`);
+  const openWiki = (e) => {
+    if (e.keyCode === 13) {
+      window.open(`https://en.wikipedia.org/wiki/${article.title}`);
+    }
   };
 
   return (
     <div className="search">
-      <input
-        type="input"
-        placeholder="query"
-        value={myQuery}
-        onChange={(e) => {
-          handleInput(e);
-        }}
-        onKeyDown={handleKeypress}
-      />
-      <button type="submit" onClick={fetchArticle}>
-        Search
-      </button>
-      <div className="article-container">
+      <div className="searchinput">
+        <input
+          type="input"
+          placeholder="query"
+          value={myQuery}
+          onChange={(e) => {
+            handleInput(e);
+          }}
+          onKeyDown={handleKeypress}
+        />
+        <button type="submit" onClick={fetchArticle}>
+          Search
+        </button>
+      </div>
+      <div role="article" className="article-container">
         <h4 className="article-title">{article.title}</h4>
         <div className="article-body">{article.summary}</div>
         {article.title && article.summary !== 'No matching article found...' && (
