@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/Search.css';
 
 function Search() {
   const [article, setArticle] = useState({
@@ -45,6 +46,10 @@ function Search() {
     }
   };
 
+  const openWiki = () => {
+    window.open(`https://en.wikipedia.org/wiki/${article.title}`);
+  };
+
   return (
     <div className="search">
       <input
@@ -59,9 +64,19 @@ function Search() {
       <button type="submit" onClick={fetchArticle}>
         Search
       </button>
-
-      <h4 className="article-title">{article.title}</h4>
-      <div className="article-body">{article.summary}</div>
+      <div className="article-container">
+        <h4 className="article-title">{article.title}</h4>
+        <div className="article-body">{article.summary}</div>
+        <div
+          className="readmoreBtn"
+          onClick={openWiki}
+          onKeyDown={openWiki}
+          role="button"
+          tabIndex={0}
+        >
+          Read more on Wikipedia
+        </div>
+      </div>
     </div>
   );
 }

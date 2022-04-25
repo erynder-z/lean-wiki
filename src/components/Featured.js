@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import '../styles/Featured.css';
 
 function Featured() {
   const [article, setArticle] = useState({
     title: '',
+    displaytitle: '',
     summary: '',
   });
 
@@ -25,7 +27,8 @@ function Featured() {
       const fetchData = await response.json();
 
       setArticle({
-        title: fetchData.tfa.displaytitle,
+        displaytitle: fetchData.tfa.displaytitle,
+        title: fetchData.tfa.title,
         summary: fetchData.tfa.extract,
       });
     } catch (error) {
@@ -33,15 +36,28 @@ function Featured() {
     }
   }
 
+  const openWiki = () => {
+    window.open(`https://en.wikipedia.org/wiki/${article.title}`);
+  };
+
   useEffect(() => {
     fetchFeaturedArticle();
   }, []);
 
   return (
     <div className="featured">
-      <h1>Featured Article</h1>
-      <h4 className="article-title">{article.title}</h4>
+      <h1>Todays Featured Article</h1>
+      <h4 className="article-title">{article.displaytitle}</h4>
       <div className="article-body">{article.summary}</div>
+      <div
+        className="readmoreBtn"
+        onClick={openWiki}
+        onKeyDown={openWiki}
+        role="button"
+        tabIndex={0}
+      >
+        Read more on Wikipedia
+      </div>
     </div>
   );
 }
