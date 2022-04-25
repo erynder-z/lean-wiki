@@ -8,7 +8,10 @@ function Search() {
     summary: null,
   });
 
-  const [myQuery, setMyQuery] = useState('');
+  const [currentQuery, setMyQuery] = useState('');
+  const [queries, setrecentQueries] = useState({
+    recentQueries: [],
+  });
 
   const apiEndpoint = 'https://en.wikipedia.org/w/api.php';
   const params =
@@ -16,7 +19,7 @@ function Search() {
 
   async function fetchArticle() {
     try {
-      const response = await fetch(`${apiEndpoint}?${params}${myQuery}`);
+      const response = await fetch(`${apiEndpoint}?${params}${currentQuery}`);
 
       const fetchData = await response.json();
       const articleID = Object.keys(fetchData.query.pages);
@@ -32,6 +35,9 @@ function Search() {
           summary: fetchData.query.pages[`${articleID}`].extract,
         });
       }
+      setrecentQueries(() => ({
+        recentQueries: [...queries.recentQueries, currentQuery],
+      }));
     } catch (error) {
       console.log(`There has been a problem with your fetch operation:${error}`);
     }
@@ -60,7 +66,7 @@ function Search() {
         <input
           type="input"
           placeholder="query"
-          value={myQuery}
+          value={currentQuery}
           onChange={(e) => {
             handleInput(e);
           }}
