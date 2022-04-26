@@ -4,26 +4,25 @@ import '../styles/Recent.css';
 function Recent(props) {
   const { queries, getRecentArticle } = props;
   return (
-    <div className="recent-container">
+    <div className="recent-card">
       <h4>Recent searches:</h4>
-      <ul>
-        {queries.map((item) => (
-          <div
-            key={queries.indexOf(item).toString()}
-            className="query-item"
-            onClick={() => {
-              getRecentArticle(item);
-            }}
-            onKeyDown={() => {
-              getRecentArticle(item);
-            }}
-            role="link"
-            tabIndex={0}
-          >
-            {item}
-          </div>
-        ))}
-      </ul>
+
+      {queries.map((item) => (
+        <div
+          key={queries.indexOf(item).toString()}
+          className="query-item"
+          onClick={() => {
+            getRecentArticle(item);
+          }}
+          onKeyDown={() => {
+            getRecentArticle(item);
+          }}
+          role="link"
+          tabIndex={0}
+        >
+          {item}
+        </div>
+      ))}
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav';
-import Featured from './components/Featured';
+import Glance from './components/Glance';
 import Search from './components/Search';
 import About from './components/About';
 
@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <Nav />
       <Routes>
-        <Route path="/" element={<Featured />} />
+        <Route path="/" element={<Glance />} />
         <Route path="/search" element={<Search />} />
         <Route path="/about" element={<About />} />
       </Routes>
