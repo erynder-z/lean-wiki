@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/Search.css';
 import icon from '../assets/layers-search-outline.svg';
 import Recent from './Recent';
 
 function Search() {
+  const localdata = localStorage.getItem('queries');
   const [article, setArticle] = useState({
     title: null,
     summary: null,
   });
 
   const [currentQuery, setMyQuery] = useState('');
-  const [queries, setQueries] = useState([]);
+  const [queries, setQueries] = useState(localdata ? JSON.parse(localdata) : []);
 
   const apiEndpoint = 'https://en.wikipedia.org/w/api.php';
   const params =
@@ -56,6 +57,10 @@ function Search() {
       window.open(`https://en.wikipedia.org/wiki/${article.title}`);
     }
   };
+
+  useEffect(() => {
+    localStorage.setItem('queries', JSON.stringify(queries));
+  }, [queries]);
 
   return (
     <div className="search">
