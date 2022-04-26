@@ -1,9 +1,21 @@
 @import-normalize;
+
 body {
   min-height: 100vh;
   background-color: #eeedde;
+  box-sizing: border-box;
 }
 
-.App {
-  text-align: center;
+.readmoreBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: 2rem 1rem 0rem 1rem;
+  background-color: #203239;
+  color: whitesmoke;
+}
+
+.readmoreBtn:hover {
+  cursor: pointer;
 }
