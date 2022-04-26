@@ -64,10 +64,8 @@ function Search() {
     fetchArticle(query);
   };
 
-  const openWiki = (e) => {
-    if (e.keyCode === 13) {
-      window.open(`https://en.wikipedia.org/wiki/${article.title}`);
-    }
+  const openWiki = () => {
+    window.open(`https://en.wikipedia.org/wiki/${article.title}`);
   };
 
   useEffect(() => {
