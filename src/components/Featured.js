@@ -28,6 +28,18 @@ function Featured(props) {
 export default Featured;
 
 Featured.propTypes = {
-  article: PropTypes.objectOf(PropTypes.string).isRequired,
+  article: PropTypes.shape({
+    displaytitle: PropTypes.string,
+    title: PropTypes.string,
+    summary: PropTypes.string,
+    onthisday: PropTypes.arrayOf(
+      PropTypes.shape({
+        // eslint-disable-next-line react/forbid-prop-types
+        pages: PropTypes.array,
+        text: PropTypes.string,
+        year: PropTypes.number,
+      }),
+    ),
+  }).isRequired,
   openWiki: PropTypes.func.isRequired,
 };
