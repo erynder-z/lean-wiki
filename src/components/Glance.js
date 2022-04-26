@@ -7,6 +7,7 @@ function Glance() {
     title: null,
     displaytitle: null,
     summary: null,
+    onthisday: [null],
   });
 
   const today = new Date();
@@ -31,6 +32,7 @@ function Glance() {
         displaytitle: fetchData.tfa.displaytitle,
         title: fetchData.tfa.title,
         summary: fetchData.tfa.extract,
+        onthisday: fetchData.onthisday,
       });
     } catch (error) {
       console.log(`There has been a problem with your fetch operation:${error}`);
