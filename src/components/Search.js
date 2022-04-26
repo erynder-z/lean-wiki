@@ -17,9 +17,9 @@ function Search() {
   const params =
     'format=json&origin=*&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=';
 
-  async function fetchArticle() {
+  async function fetchArticle(query) {
     try {
-      const response = await fetch(`${apiEndpoint}?${params}${currentQuery}`);
+      const response = await fetch(`${apiEndpoint}?${params}${query}`);
 
       const fetchData = await response.json();
       const articleID = Object.keys(fetchData.query.pages);
@@ -35,7 +35,11 @@ function Search() {
           summary: fetchData.query.pages[`${articleID}`].extract,
         });
       }
-      setQueries(() => [...queries, currentQuery]);
+      if (!queries.includes(currentQuery)) {
+        if (currentQuery !== '') {
+          setQueries(() => [...queries, currentQuery]);
+        }
+      }
     } catch (error) {
       console.log(`There has been a problem with your fetch operation:${error}`);
     }
@@ -47,9 +51,17 @@ function Search() {
 
   const handleKeypress = (e) => {
     if (e.keyCode === 13) {
-      fetchArticle();
+      fetchArticle(currentQuery);
       e.target.blur();
     }
+  };
+
+  const handleSubmit = () => {
+    fetchArticle(currentQuery);
+  };
+
+  const getRecentArticle = (query) => {
+    fetchArticle(query);
   };
 
   const openWiki = (e) => {
@@ -74,7 +86,7 @@ function Search() {
           }}
           onKeyDown={handleKeypress}
         />
-        <button type="submit" onClick={fetchArticle}>
+        <button type="submit" onClick={handleSubmit}>
           Search
         </button>
       </div>
@@ -99,7 +111,7 @@ function Search() {
           </div>
         )}
       </div>
-      <Recent queries={queries} />
+      <Recent queries={queries} getRecentArticle={getRecentArticle} />
     </div>
   );
 }
