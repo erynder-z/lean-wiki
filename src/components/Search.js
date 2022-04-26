@@ -76,20 +76,6 @@ function Search() {
 
   return (
     <div className="search">
-      <div className="searchinput">
-        <input
-          type="input"
-          placeholder="query"
-          value={currentQuery}
-          onChange={(e) => {
-            handleInput(e);
-          }}
-          onKeyDown={handleKeypress}
-        />
-        <button type="submit" onClick={handleSubmit}>
-          Search
-        </button>
-      </div>
       <div role="article" className="article-container">
         <h4 className="article-title">{article.title}</h4>
         <div className="article-body">{article.summary}</div>
@@ -112,6 +98,20 @@ function Search() {
         )}
       </div>
       <Recent queries={queries} getRecentArticle={getRecentArticle} />
+      <div className="searchinput">
+        <input
+          type="input"
+          placeholder="query"
+          value={currentQuery}
+          onChange={(e) => {
+            handleInput(e);
+          }}
+          onKeyDown={handleKeypress}
+        />
+        <button type="submit" onClick={handleSubmit}>
+          Search
+        </button>
+      </div>
     </div>
   );
 }
