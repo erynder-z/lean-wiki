@@ -1,4 +1,4 @@
-.featured-card {
+.random-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,14 +11,14 @@
   height: fit-content;
 }
 
-.featured-card:hover {
+.random-card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.article-title {
+.random-title {
   align-self: flex-start;
 }
-.article-body {
+.random-body {
   text-align: left;
   line-height: 1.2;
 }
