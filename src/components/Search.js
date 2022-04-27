@@ -60,11 +60,20 @@ function Search() {
     fetchArticle(currentQuery);
   };
 
-  const getRecentArticle = (query) => {
+  const getRecentArticle = (query, e) => {
     fetchArticle(query);
+    e.target.blur();
   };
 
-  const openWiki = () => {
+  const getRecentArticleKeypress = (query, e) => {
+    if (e.keyCode === 13) {
+      fetchArticle(query);
+    }
+    e.target.blur();
+  };
+
+  const openWiki = (e) => {
+    e.target.blur();
     window.open(`https://en.wikipedia.org/wiki/${article.title}`);
   };
 
@@ -95,7 +104,11 @@ function Search() {
           </div>
         )}
       </div>
-      <Recent queries={queries} getRecentArticle={getRecentArticle} />
+      <Recent
+        queries={queries}
+        getRecentArticle={getRecentArticle}
+        getRecentArticleKeypress={getRecentArticleKeypress}
+      />
       <div className="searchinput">
         <input
           type="input"

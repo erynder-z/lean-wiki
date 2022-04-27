@@ -24,7 +24,8 @@ function RandomArticle() {
     }
   }
 
-  const openWiki = () => {
+  const openWiki = (e) => {
+    e.target.blur();
     window.open(`https://en.wikipedia.org/wiki/${randomarticle.title}`);
   };
 
