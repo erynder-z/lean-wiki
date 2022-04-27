@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Featured from './Featured';
+import ThisDayInHistory from './ThisDayInHistory';
 import '../styles/Glance.css';
 
 function Glance() {
@@ -7,7 +8,12 @@ function Glance() {
     title: null,
     displaytitle: null,
     summary: null,
-    onthisday: [null],
+    onthisday: [
+      {
+        text: null,
+        year: null,
+      },
+    ],
   });
 
   const today = new Date();
@@ -50,6 +56,7 @@ function Glance() {
   return (
     <div className="glance">
       <Featured article={article} openWiki={openWiki} />
+      <ThisDayInHistory onthisday={article.onthisday} />
     </div>
   );
 }
