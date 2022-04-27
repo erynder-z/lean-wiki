@@ -1,9 +1,12 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState, useEffect } from 'react';
 import Featured from './Featured';
+import RandomArticle from './RandomArticle';
 import ThisDayInHistory from './ThisDayInHistory';
 import '../styles/Glance.css';
 
 function Glance() {
+  const [mode, setMode] = useState('featured');
   const [article, setArticle] = useState({
     title: null,
     displaytitle: null,
@@ -49,13 +52,38 @@ function Glance() {
     window.open(`https://en.wikipedia.org/wiki/${article.title}`);
   };
 
+  const toggleMode = (e) => {
+    e.target.blur();
+    if (mode === 'featured') {
+      setMode('random');
+    } else if (mode === 'random') {
+      setMode('featured');
+    }
+  };
+
   useEffect(() => {
     fetchFeaturedArticle();
   }, []);
 
   return (
     <div className="glance">
-      <Featured article={article} openWiki={openWiki} />
+      <div className="glance-main-container">
+        {mode === 'featured' ? (
+          <Featured article={article} openWiki={openWiki} />
+        ) : (
+          <RandomArticle />
+        )}
+
+        <div
+          className="getarticleBtn"
+          onClick={toggleMode}
+          onKeyDown={toggleMode}
+          role="button"
+          tabIndex={0}
+        >
+          Get {mode === 'random' && 'other'} random article
+        </div>
+      </div>
       <ThisDayInHistory onthisday={article.onthisday} />
     </div>
   );
