@@ -3,8 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2vw 5vw;
-  padding: 2rem;
+  margin: 2vw 5vw 5vw 5vw;
   background-color: whitesmoke;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
@@ -17,8 +16,21 @@
 
 .random-title {
   align-self: flex-start;
+  padding: 0 2rem;
 }
 .random-body {
   text-align: left;
   line-height: 1.2;
+  padding: 0 2rem;
+}
+
+.newArticleBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  margin: 5vw 0 0 0;
+  width: 100%;
+  background-color: rgba(22, 130, 22, 0.857);
+  color: whitesmoke;
 }

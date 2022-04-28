@@ -12,3 +12,12 @@
 .query-item:hover {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 768px) {
+  .recent-card {
+    padding: 1rem;
+    margin: 1rem;
+    align-items: center;
+    line-height: 1.5rem;
+  }
+}

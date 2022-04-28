@@ -5,12 +5,20 @@
   min-height: 90vh;
 }
 
-.getarticleBtn {
+.getarticleBtn,
+.returnToFeaturedBtn {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  margin: 2rem 1rem 0rem 1rem;
+  margin: 2vw 5vw;
   background-color: #203239;
   color: whitesmoke;
+}
+
+@media only screen and (max-width: 768px) {
+  .glance {
+    display: flex;
+    flex-direction: column;
+  }
 }

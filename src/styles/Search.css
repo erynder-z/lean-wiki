@@ -58,3 +58,15 @@ img {
   color: whitesmoke;
   padding: 0 1rem;
 }
+
+@media only screen and (max-width: 768px) {
+  .search {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+}
