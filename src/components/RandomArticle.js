@@ -11,6 +11,11 @@ function RandomArticle(props) {
   });
 
   async function fetchRandomArticle() {
+    setRandomArticle(() => ({
+      title: null,
+      displaytitle: null,
+      summary: 'fetching data',
+    }));
     try {
       const response = await fetch('https://en.wikipedia.org/api/rest_v1/page/random/summary');
 

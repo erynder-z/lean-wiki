@@ -33,6 +33,15 @@ function Glance() {
   });
 
   async function fetchFeaturedArticle() {
+    setArticle((prevState) => ({
+      ...prevState,
+      summary: 'fetching data',
+      onthisday: [
+        {
+          text: 'fetching data',
+        },
+      ],
+    }));
     try {
       const response = await fetch(
         `https://api.wikimedia.org/feed/v1/wikipedia/en/featured/${year}/${monthFormatted}/${day}`,

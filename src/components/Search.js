@@ -18,6 +18,10 @@ function Search() {
     'format=json&origin=*&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=';
 
   async function fetchArticle(query) {
+    setArticle(() => ({
+      title: null,
+      summary: 'fetching data',
+    }));
     try {
       const response = await fetch(`${apiEndpoint}?${params}${query}`);
 
