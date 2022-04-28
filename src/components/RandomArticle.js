@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import '../styles/RandomArticle.css';
 
-function RandomArticle() {
+function RandomArticle(props) {
+  const { trigger } = props;
   const [randomarticle, setRandomArticle] = useState({
     title: null,
     displaytitle: null,
@@ -31,7 +33,7 @@ function RandomArticle() {
 
   useEffect(() => {
     fetchRandomArticle();
-  }, []);
+  }, [trigger]);
 
   return (
     <div className="random-card">
@@ -54,3 +56,7 @@ function RandomArticle() {
 }
 
 export default RandomArticle;
+
+RandomArticle.propTypes = {
+  trigger: PropTypes.number.isRequired,
+};

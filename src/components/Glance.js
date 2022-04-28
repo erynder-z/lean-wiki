@@ -7,6 +7,9 @@ import '../styles/Glance.css';
 
 function Glance() {
   const [mode, setMode] = useState('featured');
+  // pass a changable rumber to the RandomArticle component
+  // to trigger a new fetch when getarticleBtn is pressed
+  const [trigger, setTrigger] = useState(0);
   const [article, setArticle] = useState({
     title: null,
     displaytitle: null,
@@ -57,9 +60,11 @@ function Glance() {
     e.target.blur();
     if (mode === 'featured') {
       setMode('random');
-    } else if (mode === 'random') {
-      setMode('featured');
     }
+  };
+
+  const triggerChange = () => {
+    setTrigger(trigger + 1);
   };
 
   useEffect(() => {
@@ -70,20 +75,32 @@ function Glance() {
     <div className="glance">
       <div className="glance-main-container">
         {mode === 'featured' ? (
-          <Featured article={article} openWiki={openWiki} />
+          <div>
+            <Featured article={article} openWiki={openWiki} />
+            <div
+              className="getarticleBtn"
+              onClick={toggleMode}
+              onKeyDown={toggleMode}
+              role="button"
+              tabIndex={0}
+            >
+              Get random article
+            </div>
+          </div>
         ) : (
-          <RandomArticle />
+          <div>
+            <RandomArticle trigger={trigger} />
+            <div
+              className="getarticleBtn"
+              onClick={triggerChange}
+              onKeyDown={triggerChange}
+              role="button"
+              tabIndex={0}
+            >
+              Get other random article
+            </div>
+          </div>
         )}
-
-        <div
-          className="getarticleBtn"
-          onClick={toggleMode}
-          onKeyDown={toggleMode}
-          role="button"
-          tabIndex={0}
-        >
-          Get {mode === 'random' && 'other'} random article
-        </div>
       </div>
       <ThisDayInHistory onthisday={article.onthisday} />
     </div>
