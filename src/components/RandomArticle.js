@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import '../styles/RandomArticle.css';
 
-function RandomArticle(props) {
-  const { trigger } = props;
+function RandomArticle() {
+  const [trigger, setTrigger] = useState(0);
   const [randomarticle, setRandomArticle] = useState({
     title: null,
     displaytitle: null,
@@ -16,6 +15,7 @@ function RandomArticle(props) {
       displaytitle: null,
       summary: 'fetching data',
     }));
+
     try {
       const response = await fetch('https://en.wikipedia.org/api/rest_v1/page/random/summary');
 
@@ -34,6 +34,10 @@ function RandomArticle(props) {
   const openWiki = (e) => {
     e.target.blur();
     window.open(`https://en.wikipedia.org/wiki/${randomarticle.title}`);
+  };
+
+  const triggerChange = () => {
+    setTrigger(trigger + 1);
   };
 
   useEffect(() => {
@@ -56,12 +60,17 @@ function RandomArticle(props) {
           Read more on Wikipedia
         </div>
       )}
+      <div
+        className="newArticleBtn"
+        onClick={triggerChange}
+        onKeyDown={triggerChange}
+        role="button"
+        tabIndex={0}
+      >
+        Get other random article
+      </div>
     </div>
   );
 }
 
 export default RandomArticle;
-
-RandomArticle.propTypes = {
-  trigger: PropTypes.number.isRequired,
-};

@@ -7,9 +7,6 @@ import '../styles/Glance.css';
 
 function Glance() {
   const [mode, setMode] = useState('featured');
-  // pass a changable rumber to the RandomArticle component
-  // to trigger a new fetch when getarticleBtn is pressed
-  const [trigger, setTrigger] = useState(0);
   const [article, setArticle] = useState({
     title: null,
     displaytitle: null,
@@ -69,11 +66,9 @@ function Glance() {
     e.target.blur();
     if (mode === 'featured') {
       setMode('random');
+    } else if (mode === 'random') {
+      setMode('featured');
     }
-  };
-
-  const triggerChange = () => {
-    setTrigger(trigger + 1);
   };
 
   useEffect(() => {
@@ -98,15 +93,15 @@ function Glance() {
           </div>
         ) : (
           <div>
-            <RandomArticle trigger={trigger} />
+            <RandomArticle />
             <div
-              className="getarticleBtn"
-              onClick={triggerChange}
-              onKeyDown={triggerChange}
+              className="returnToFeaturedBtn"
+              onClick={toggleMode}
+              onKeyDown={toggleMode}
               role="button"
               tabIndex={0}
             >
-              Get other random article
+              Return to featured article
             </div>
           </div>
         )}
