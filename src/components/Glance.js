@@ -1,11 +1,13 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Featured from './Featured';
 import RandomArticle from './RandomArticle';
 import ThisDayInHistory from './ThisDayInHistory';
 import '../styles/Glance.css';
 
-function Glance() {
+function Glance(props) {
+  const { darkmode, toggleDarkMode } = props;
   const [mode, setMode] = useState('featured');
   const [article, setArticle] = useState({
     title: null,
@@ -76,8 +78,17 @@ function Glance() {
   }, []);
 
   return (
-    <div className="glance">
+    <div className={`glance ${darkmode === true ? 'dark' : null}`}>
       <div className="glance-main-container">
+        <div
+          className="darkModeBtn"
+          onClick={toggleDarkMode}
+          onKeyDown={toggleDarkMode}
+          role="button"
+          tabIndex={0}
+        >
+          Toogle Dark Mode
+        </div>
         {mode === 'featured' ? (
           <div>
             <Featured article={article} openWiki={openWiki} />
@@ -112,3 +123,8 @@ function Glance() {
 }
 
 export default Glance;
+
+Glance.propTypes = {
+  darkmode: PropTypes.bool.isRequired,
+  toggleDarkMode: PropTypes.func.isRequired,
+};

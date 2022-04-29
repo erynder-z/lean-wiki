@@ -1,9 +1,11 @@
 @import-normalize;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
 
 body {
   min-height: 100vh;
   background-color: #f0f0f0;
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .readmoreBtn {

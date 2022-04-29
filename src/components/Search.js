@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import '../styles/Search.css';
 import icon from '../assets/layers-search-outline.svg';
 import Recent from './Recent';
 
-function Search() {
+function Search(props) {
+  const { darkmode } = props;
   const localdata = localStorage.getItem('queries');
   const [article, setArticle] = useState({
     title: null,
@@ -86,7 +88,7 @@ function Search() {
   }, [queries]);
 
   return (
-    <div className="search">
+    <div className={`search ${darkmode === true ? 'dark' : null}`}>
       <div role="article" className="article-container">
         <h4 className="article-title">{article.title}</h4>
         <div className="article-body">{article.summary}</div>
@@ -132,3 +134,7 @@ function Search() {
 }
 
 export default Search;
+
+Search.propTypes = {
+  darkmode: PropTypes.bool.isRequired,
+};

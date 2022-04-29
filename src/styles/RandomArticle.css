@@ -14,6 +14,11 @@
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
+.random-card > h1 {
+  text-align: center;
+  padding: 1rem;
+}
+
 .random-title {
   align-self: flex-start;
   padding: 0 2rem;
