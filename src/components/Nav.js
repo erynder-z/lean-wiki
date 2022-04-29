@@ -9,12 +9,11 @@ function Nav() {
 
   return (
     <nav>
-      <h3>
-        <Link style={navStyle} to="/">
-          lean wiki
-        </Link>
-      </h3>
+      <h3>lean wiki</h3>
       <ul className="nav-links">
+        <Link style={navStyle} to="/">
+          Home
+        </Link>
         <Link style={navStyle} to="/search">
           Search
         </Link>
