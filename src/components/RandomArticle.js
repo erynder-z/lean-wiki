@@ -36,7 +36,8 @@ function RandomArticle() {
     window.open(`https://en.wikipedia.org/wiki/${randomarticle.title}`);
   };
 
-  const triggerChange = () => {
+  const triggerChange = (e) => {
+    e.target.blur();
     setTrigger(trigger + 1);
   };
 
