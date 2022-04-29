@@ -12,8 +12,9 @@
   align-items: center;
   padding: 1rem;
   margin: 2vw 5vw;
-  background-color: #203239;
+  background-color: #1a374d;
   color: whitesmoke;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {

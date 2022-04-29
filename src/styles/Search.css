@@ -45,18 +45,22 @@ img {
   height: 100%;
   border: none;
   padding: 0 1rem;
+  background-color: #fffdde;
+  font-size: larger;
 }
 .searchinput > input:focus {
   outline: none;
-  background-color: rgba(73, 214, 80, 0.766);
+  background-color: #9cdc9f;
 }
 
 .searchinput > button {
   height: 100%;
   border: none;
-  background-color: #203239;
+  background-color: #1a374d;
   color: whitesmoke;
   padding: 0 1rem;
+  font-size: larger;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {

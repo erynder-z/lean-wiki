@@ -116,7 +116,7 @@ function Search() {
       <div className="searchinput">
         <input
           type="input"
-          placeholder="query"
+          placeholder="enter your search..."
           value={currentQuery}
           onChange={(e) => {
             handleInput(e);
