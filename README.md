@@ -26,7 +26,7 @@ lean wiki - sometimes just enough is all you really need!
 
 ```
 git clone https://github.com/erynder-z/lean-wiki.git
-cd cv-project
+cd lean-wiki
 npm install
 npm start
 ```

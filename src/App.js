@@ -1,7 +1,7 @@
 import './App.css';
 import './styles/darkmode.css';
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import Glance from './components/Glance';
 import Search from './components/Search';
@@ -21,7 +21,7 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <div className="app">
       <Nav darkmode={darkmode} />
       <Routes>
         <Route path="/" element={<Glance darkmode={darkmode} />} />
@@ -29,7 +29,7 @@ function App() {
         <Route path="/about" element={<About darkmode={darkmode} />} />
       </Routes>
       <DarkmodeToggle toggleDarkMode={toggleDarkMode} />
-    </BrowserRouter>
+    </div>
   );
 }
 export default App;
