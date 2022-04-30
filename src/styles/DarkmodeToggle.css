@@ -1,0 +1,15 @@
+.darkModeBtn {
+  position: fixed;
+  width: 5rem;
+  height: 5rem;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: crimson;
+  border-radius: 50px;
+  transition: all 0.5s;
+}
+
+.darkModeBtn:hover {
+  transition: all 0.5s;
+  transform: scale(1.1);
+}
