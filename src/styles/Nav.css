@@ -18,6 +18,11 @@ nav {
   font-size: large;
 }
 
+.nav-links > a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
 @media only screen and (max-width: 768px) {
   nav {
     height: 12vh;

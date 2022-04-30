@@ -10,10 +10,6 @@
   transition: 0.3s;
 }
 
-.dark > .history-card {
-  background-color: #7882a4;
-}
-
 .history-card > h1 {
   text-align: center;
 }

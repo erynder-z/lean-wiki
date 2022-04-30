@@ -6,10 +6,6 @@
   background-color: #f0f0f0;
 }
 
-.glance.dark {
-  background-color: #495371;
-}
-
 .darkModeBtn {
   display: flex;
   justify-content: center;

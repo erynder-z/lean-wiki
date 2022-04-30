@@ -1,0 +1,57 @@
+nav.dark {
+  background-color: #152a38;
+}
+
+.dark > h3,
+.dark > .nav-links > a {
+  color: #dece9c;
+}
+
+.dark > .glance-main-container > div > .featured-card,
+.dark > .glance-main-container > div > .random-card,
+.dark > .recent-card,
+.dark > .article-container,
+.dark > .history-card,
+.dark > .about-container {
+  background-color: #3a4750;
+  color: #dece9c;
+}
+
+.glance.dark,
+.search.dark {
+  background-color: #303841;
+}
+
+.dark > .glance-main-container > div > .featured-card > .readmoreBtn,
+.dark > .glance-main-container > div > .random-card > .readmoreBtn,
+.dark > .article-container > .readmoreBtn {
+  background-color: #152a38;
+  color: #dece9c;
+}
+
+.dark > .glance-main-container > .darkModeBtn {
+  background-color: #152a38;
+  color: #dece9c;
+}
+
+.glance.dark > .glance-main-container > div > .getarticleBtn,
+.glance.dark > .glance-main-container > div > .returnToFeaturedBtn {
+  background-color: #152a38;
+  color: #dece9c;
+}
+
+.dark > .searchinput > input {
+  background-color: #dece9c;
+}
+.dark > .searchinput > button {
+  background-color: #152a38;
+  color: #dece9c;
+}
+
+.dark > .history-card > h4 {
+  border-bottom: solid 2px #dece9c;
+}
+
+.search.dark > .article-container > .placeholder-container > img {
+  filter: invert(75%);
+}

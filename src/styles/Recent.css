@@ -13,10 +13,6 @@
   cursor: pointer;
 }
 
-.dark > .recent-card {
-  background-color: #7882a4;
-}
-
 @media only screen and (max-width: 768px) {
   .recent-card {
     padding: 1rem;

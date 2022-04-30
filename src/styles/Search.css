@@ -5,14 +5,6 @@
   background-color: #f0f0f0;
 }
 
-.search.dark {
-  background-color: #495371;
-}
-
-.dark > .article-container {
-  background-color: #7882a4;
-}
-
 .article-container {
   display: flex;
   flex-direction: column;
@@ -35,10 +27,6 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.dark > .searchinput > input {
-  background-color: #577c6f;
 }
 
 .searchinput {

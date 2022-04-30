@@ -21,7 +21,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Nav />
+      <Nav darkmode={darkmode} />
       <Routes>
         <Route path="/" element={<Glance darkmode={darkmode} toggleDarkMode={toggleDarkMode} />} />
         <Route path="/search" element={<Search darkmode={darkmode} />} />
