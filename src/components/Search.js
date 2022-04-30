@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import '../styles/Search.css';
-import icon from '../assets/layers-search-outline.svg';
+import { mdiLayersSearchOutline } from '@mdi/js';
+import Icon from '@mdi/react';
 import Recent from './Recent';
 
 function Search(props) {
@@ -105,7 +106,7 @@ function Search(props) {
         )}
         {article.title === null && (
           <div className="placeholder-container">
-            <img src={icon} alt="icon" />
+            <Icon path={mdiLayersSearchOutline} size={3} color="black" className="icon" />
             <h2>Enter your search below</h2>
           </div>
         )}
