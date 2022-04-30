@@ -12,13 +12,14 @@ nav.dark {
 .dark > .recent-card,
 .dark > .article-container,
 .dark > .history-card,
-.dark > .about-container {
+.dark > .about-card {
   background-color: #3a4750;
   color: #dece9c;
 }
 
 .glance.dark,
-.search.dark {
+.search.dark,
+.about.dark {
   background-color: #303841;
 }
 
@@ -52,6 +53,6 @@ nav.dark {
   border-bottom: solid 2px #dece9c;
 }
 
-.search.dark > .article-container > .placeholder-container > img {
+.search.dark > .article-container > .placeholder-container > .icon {
   filter: invert(75%);
 }

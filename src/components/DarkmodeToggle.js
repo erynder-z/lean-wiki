@@ -15,8 +15,7 @@ function DarkmodeToggle(props) {
       onKeyDown={toggleDarkMode}
       role="button"
       tabIndex={0}
-      size={2}
-      color="white"
+      /*  size={2} */
     />
   );
 }

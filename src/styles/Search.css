@@ -17,11 +17,6 @@
   transition: 0.3s;
 }
 
-img {
-  height: 5rem;
-  width: 5rem;
-}
-
 .placeholder-container {
   display: flex;
   flex-direction: column;
