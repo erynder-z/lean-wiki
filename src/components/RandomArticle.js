@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Icon from '@mdi/react';
+import { mdiSync } from '@mdi/js';
 import '../styles/RandomArticle.css';
 
 function RandomArticle() {
@@ -49,7 +51,14 @@ function RandomArticle() {
     <div className="random-card">
       <h1>Random Wikipedia Article</h1>
       <h4 className="random-title">{randomarticle.displaytitle}</h4>
-      <div className="random-body">{randomarticle.summary}</div>
+
+      <div className="random-body">
+        {randomarticle.summary === 'fetching data' ? (
+          <Icon path={mdiSync} size={3} spin />
+        ) : (
+          randomarticle.summary
+        )}
+      </div>
       {randomarticle.displaytitle && (
         <div
           className="readmoreBtn"
