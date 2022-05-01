@@ -54,7 +54,7 @@ function Glance(props) {
       const fetchData = await response.json();
 
       setArticle({
-        displaytitle: fetchData.tfa.displaytitle,
+        displaytitle: fetchData.tfa.displaytitle.replace(/<\/?[^>]+(>|$)/g, ''),
         title: fetchData.tfa.title,
         summary: fetchData.tfa.extract,
         onthisday: fetchData.onthisday,
