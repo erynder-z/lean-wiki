@@ -31,6 +31,11 @@ function Glance(props) {
     useGrouping: false,
   });
 
+  const dayFormatted = day.toLocaleString('en-US', {
+    minimumIntegerDigits: 2,
+    useGrouping: false,
+  });
+
   async function fetchFeaturedArticle() {
     setArticle((prevState) => ({
       ...prevState,
@@ -43,7 +48,7 @@ function Glance(props) {
     }));
     try {
       const response = await fetch(
-        `https://api.wikimedia.org/feed/v1/wikipedia/en/featured/${year}/${monthFormatted}/${day}`,
+        `https://api.wikimedia.org/feed/v1/wikipedia/en/featured/${year}/${monthFormatted}/${dayFormatted}`,
       );
 
       const fetchData = await response.json();
