@@ -22,7 +22,7 @@ function RandomArticle() {
       const fetchData = await response.json();
 
       setRandomArticle({
-        displaytitle: fetchData.displaytitle,
+        displaytitle: fetchData.displaytitle.replace(/<\/?[^>]+(>|$)/g, ''),
         title: fetchData.title,
         summary: fetchData.extract,
       });
