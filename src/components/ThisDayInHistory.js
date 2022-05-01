@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Icon from '@mdi/react';
+import { mdiSync } from '@mdi/js';
 import '../styles/ThisDayInHistory.css';
 
 function ThisDayInHistory(props) {
@@ -22,11 +24,13 @@ function ThisDayInHistory(props) {
   return (
     <div className="history-card">
       <h1>What happened on this day in history?</h1>
-      <h4>{`${monthFormatted}/${dayFormatted}`}</h4>
+      <h4>{`${monthFormatted} / ${dayFormatted}`}</h4>
       {onthisday.map((item) => (
         <div key={onthisday.indexOf(item).toString()} className="day-item">
           <h5 className="day-title">{item.year}</h5>
-          <p className="day-body">{item.text}</p>
+          <p className="day-body">
+            {item.text === 'fetching data' ? <Icon path={mdiSync} size={3} spin /> : item.text}
+          </p>
         </div>
       ))}
     </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import '../styles/Search.css';
-import { mdiLayersSearchOutline } from '@mdi/js';
+import { mdiLayersSearchOutline, mdiSync, mdiMagnify } from '@mdi/js';
 import Icon from '@mdi/react';
 import Recent from './Recent';
 
@@ -79,6 +79,10 @@ function Search(props) {
     e.target.blur();
   };
 
+  const clearRecent = () => {
+    setQueries([]);
+  };
+
   const openWiki = (e) => {
     e.target.blur();
     window.open(`https://en.wikipedia.org/wiki/${article.title}`);
@@ -92,7 +96,13 @@ function Search(props) {
     <div className={`search ${darkmode === true ? 'dark' : null}`}>
       <div role="article" className="article-container">
         <h4 className="article-title">{article.title}</h4>
-        <div className="article-body">{article.summary}</div>
+        <div className="article-body">
+          {article.summary === 'fetching data' ? (
+            <Icon path={mdiSync} size={4} className="icon" spin />
+          ) : (
+            article.summary
+          )}
+        </div>
         {article.title && article.summary !== 'No matching article found...' && (
           <div
             className="readmoreBtn"
@@ -104,9 +114,9 @@ function Search(props) {
             Read more on Wikipedia
           </div>
         )}
-        {article.title === null && (
+        {article.summary === null && (
           <div className="placeholder-container">
-            <Icon path={mdiLayersSearchOutline} size={3} color="black" className="icon" />
+            <Icon path={mdiLayersSearchOutline} size={3} className="icon" />
             <h2>Enter your search below</h2>
           </div>
         )}
@@ -115,6 +125,7 @@ function Search(props) {
         queries={queries}
         getRecentArticle={getRecentArticle}
         getRecentArticleKeypress={getRecentArticleKeypress}
+        clearRecent={clearRecent}
       />
       <div className="searchinput">
         <input
@@ -127,7 +138,7 @@ function Search(props) {
           onKeyDown={handleKeypress}
         />
         <button type="submit" onClick={handleSubmit}>
-          Search
+          <Icon path={mdiMagnify} size={1} />
         </button>
       </div>
     </div>

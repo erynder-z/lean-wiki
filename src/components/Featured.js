@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Icon from '@mdi/react';
+import { mdiSync } from '@mdi/js';
 import '../styles/Featured.css';
 
 function Featured(props) {
@@ -9,7 +11,13 @@ function Featured(props) {
     <div className="featured-card">
       <h1>Todays Featured Article</h1>
       <h4 className="article-title">{article.displaytitle}</h4>
-      <div className="article-body">{article.summary}</div>
+      <div className="article-body">
+        {article.summary === 'fetching data' ? (
+          <Icon path={mdiSync} size={3} spin />
+        ) : (
+          article.summary
+        )}
+      </div>
       {article.displaytitle && (
         <div
           className="readmoreBtn"
