@@ -2,10 +2,13 @@ import PropTypes from 'prop-types';
 import '../styles/Recent.css';
 
 function Recent(props) {
-  const { queries, getRecentArticle, getRecentArticleKeypress } = props;
+  // eslint-disable-next-line object-curly-newline
+  const { queries, getRecentArticle, getRecentArticleKeypress, clearRecent } = props;
   return (
     <div className="recent-card">
       <h4>Recent searches:</h4>
+
+      {queries.length === 0 && <div className="no-recent">No recent searches</div>}
 
       {queries.map((item) => (
         <div
@@ -23,6 +26,20 @@ function Recent(props) {
           {item}
         </div>
       ))}
+
+      <div
+        className="clear-recent"
+        onClick={(e) => {
+          clearRecent(e);
+        }}
+        onKeyDown={(e) => {
+          clearRecent(e);
+        }}
+        role="button"
+        tabIndex={0}
+      >
+        clear recent
+      </div>
     </div>
   );
 }
@@ -33,4 +50,5 @@ Recent.propTypes = {
   queries: PropTypes.arrayOf(PropTypes.string).isRequired,
   getRecentArticle: PropTypes.func.isRequired,
   getRecentArticleKeypress: PropTypes.func.isRequired,
+  clearRecent: PropTypes.func.isRequired,
 };
