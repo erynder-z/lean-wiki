@@ -54,5 +54,18 @@ nav.dark {
 }
 
 .search.dark > .article-container > .placeholder-container > .icon {
-  filter: invert(75%);
+  color: #dece9c;
+}
+
+.search.dark > .recent-card > .clear-recent {
+  background-color: #152a38;
+  color: #dece9c;
+}
+
+.about.dark > .about-card > .about-body > ul > li > a {
+  color: aquamarine;
+}
+
+.about.dark > .about-card > .about-body > ul > li > a:visited {
+  color: #ce5950;
 }

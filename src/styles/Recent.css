@@ -9,8 +9,32 @@
   transition: 0.3s;
 }
 
+.recent-card > h4 {
+  text-decoration: underline;
+}
+
+.no-recent {
+  font-style: italic;
+}
+
+.query-item {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
 .query-item:hover {
   cursor: pointer;
+}
+
+.clear-recent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.5rem;
+  width: 100%;
+  margin: 1rem 0;
+  background-color: #1a374d;
+  color: whitesmoke;
 }
 
 @media only screen and (max-width: 768px) {

@@ -44,6 +44,7 @@
   background-color: #fffdde;
   font-size: larger;
 }
+
 .searchinput > input:focus {
   outline: none;
   background-color: #9cdc9f;
@@ -68,5 +69,14 @@
   .article-container {
     padding: 1rem;
     margin: 1rem;
+  }
+
+  .searchinput {
+    height: 5.5vh;
+  }
+
+  .searchinput > button {
+    width: 20%;
+    font-size: medium;
   }
 }

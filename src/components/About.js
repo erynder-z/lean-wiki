@@ -30,13 +30,23 @@ function About(props) {
           <h5>This app uses the following:</h5>
           <ul>
             <li>
-              <a href="https://reactjs.org/">React</a>
+              <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
+                React
+              </a>
             </li>
             <li>
-              <a href="https://www.mediawiki.org/wiki/Wikimedia_REST_API">Wikimedia REST API</a>
+              <a
+                href="https://www.mediawiki.org/wiki/Wikimedia_REST_API"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Wikimedia REST API
+              </a>
             </li>
             <li>
-              <a href="https://materialdesignicons.com/">Material Design Icons</a>
+              <a href="https://materialdesignicons.com/" target="_blank" rel="noreferrer">
+                Material Design Icons
+              </a>
             </li>
           </ul>
         </div>
@@ -44,7 +54,7 @@ function About(props) {
           {' '}
           Copyright © Erynder-Z 2022 ||&nbsp;
           <a href="https://github.com/erynder-z" target="_blank" rel="noreferrer">
-            &nbsp;My GitHub&nbsp; <Icon path={mdiGithub} size={1} color="black" className="icon" />
+            <Icon path={mdiGithub} size={2} color="black" className="icon" />
           </a>
         </div>
       </div>
