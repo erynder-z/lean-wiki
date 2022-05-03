@@ -16,8 +16,12 @@ body {
   margin: 2rem 1rem 0rem 1rem;
   background-color: #1a374d;
   color: whitesmoke;
+  cursor: pointer;
+  transition: all 0.5s;
 }
 
 .readmoreBtn:hover {
-  cursor: pointer;
+  filter: hue-rotate(45deg);
+  transition: all 0.5s;
+  transform: scale(1.05);
 }

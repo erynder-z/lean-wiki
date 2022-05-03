@@ -38,4 +38,9 @@
   width: 100%;
   border-top: solid 5px #ffd07f;
   cursor: pointer;
+  transition: all 0.5s;
+}
+
+.newArticleBtn:hover {
+  background-color: #ffd07f;
 }

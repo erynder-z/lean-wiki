@@ -6,17 +6,6 @@
   background-color: #f0f0f0;
 }
 
-.darkModeBtn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  margin: 2vw 5vw;
-  background-color: #1a374d;
-  color: whitesmoke;
-  cursor: pointer;
-}
-
 .getarticleBtn,
 .returnToFeaturedBtn {
   display: flex;
@@ -27,6 +16,14 @@
   background-color: #1a374d;
   color: whitesmoke;
   cursor: pointer;
+  transition: all 0.5s;
+}
+
+.getarticleBtn:hover,
+.returnToFeaturedBtn:hover {
+  filter: hue-rotate(45deg);
+  transition: all 0.5s;
+  transform: scale(1.05);
 }
 
 @media only screen and (max-width: 768px) {

@@ -41,6 +41,10 @@ nav.dark {
   color: #dece9c;
 }
 
+.dark > .glance-main-container > div > .random-card > .newArticleBtn:hover {
+  background-color: #1d9caa31;
+}
+
 .dark > .searchinput > input {
   background-color: #dece9c;
 }

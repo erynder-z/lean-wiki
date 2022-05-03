@@ -58,6 +58,13 @@
   padding: 0 1rem;
   font-size: larger;
   cursor: pointer;
+  transition: all 0.5s;
+}
+
+.searchinput > button:hover {
+  filter: hue-rotate(45deg);
+  transition: all 0.5s;
+  transform: scale(1.05);
 }
 
 @media only screen and (max-width: 768px) {

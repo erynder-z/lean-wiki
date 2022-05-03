@@ -35,6 +35,14 @@
   margin: 1rem 0;
   background-color: #1a374d;
   color: whitesmoke;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.clear-recent:hover {
+  filter: hue-rotate(45deg);
+  transition: all 0.5s;
+  transform: scale(1.05);
 }
 
 @media only screen and (max-width: 768px) {

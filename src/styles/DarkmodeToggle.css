@@ -1,11 +1,16 @@
 .darkModeBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.5s;
   position: fixed;
   width: 2rem;
   height: 2rem;
-  bottom: 1.5rem;
-  right: -2rem;
+  bottom: 3rem;
+  right: 1rem;
   background-color: #2d5f82;
-  /* color: rgba(245, 245, 245, 0.75); */
   color: whitesmoke;
   border-radius: 100px;
   transition: all 0.5s;
@@ -19,7 +24,6 @@
 
 @media only screen and (max-width: 768px) {
   .darkModeBtn {
-    bottom: 2.5rem;
-    right: 0rem;
+    bottom: 2rem;
   }
 }

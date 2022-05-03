@@ -23,6 +23,10 @@ nav {
   text-decoration: none;
 }
 
+.nav-links > a:hover {
+  text-decoration: underline;
+}
+
 @media only screen and (max-width: 768px) {
   nav {
     height: 12vh;
