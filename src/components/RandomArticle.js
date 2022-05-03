@@ -54,7 +54,7 @@ function RandomArticle() {
 
       <div className="random-body">
         {randomarticle.summary === 'fetching data' ? (
-          <Icon path={mdiSync} size={3} spin />
+          <Icon path={mdiSync} size={3} horizontal spin />
         ) : (
           randomarticle.summary
         )}

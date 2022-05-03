@@ -98,7 +98,7 @@ function Search(props) {
         <h4 className="article-title">{article.title}</h4>
         <div className="article-body">
           {article.summary === 'fetching data' ? (
-            <Icon path={mdiSync} size={4} className="icon" spin />
+            <Icon path={mdiSync} size={4} className="icon" horizontal spin />
           ) : (
             article.summary
           )}

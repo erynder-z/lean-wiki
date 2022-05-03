@@ -13,7 +13,7 @@ function Featured(props) {
       <h4 className="article-title">{article.displaytitle}</h4>
       <div className="article-body">
         {article.summary === 'fetching data' ? (
-          <Icon path={mdiSync} size={3} spin />
+          <Icon path={mdiSync} size={3} horizontal spin />
         ) : (
           article.summary
         )}

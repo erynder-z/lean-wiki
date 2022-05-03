@@ -29,7 +29,11 @@ function ThisDayInHistory(props) {
         <div key={onthisday.indexOf(item).toString()} className="day-item">
           <h5 className="day-title">{item.year}</h5>
           <p className="day-body">
-            {item.text === 'fetching data' ? <Icon path={mdiSync} size={3} spin /> : item.text}
+            {item.text === 'fetching data' ? (
+              <Icon path={mdiSync} size={3} horizontal spin />
+            ) : (
+              item.text
+            )}
           </p>
         </div>
       ))}
