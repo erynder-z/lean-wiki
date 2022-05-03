@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/lean-wiki/static/css/main.bc96178a.css",
+    "main.css": "/lean-wiki/static/css/main.a4975d6c.css",
     "main.js": "/lean-wiki/static/js/main.a06ca631.js",
     "index.html": "/lean-wiki/index.html",
-    "main.bc96178a.css.map": "/lean-wiki/static/css/main.bc96178a.css.map",
+    "main.a4975d6c.css.map": "/lean-wiki/static/css/main.a4975d6c.css.map",
     "main.a06ca631.js.map": "/lean-wiki/static/js/main.a06ca631.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc96178a.css",
+    "static/css/main.a4975d6c.css",
     "static/js/main.a06ca631.js"
   ]
 }
