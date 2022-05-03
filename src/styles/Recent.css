@@ -24,6 +24,8 @@
 
 .query-item:hover {
   cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.5s;
 }
 
 .clear-recent {
@@ -42,7 +44,6 @@
 .clear-recent:hover {
   filter: hue-rotate(45deg);
   transition: all 0.5s;
-  transform: scale(1.05);
 }
 
 @media only screen and (max-width: 768px) {

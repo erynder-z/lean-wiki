@@ -21,10 +21,12 @@ nav {
 .nav-links > a {
   color: whitesmoke;
   text-decoration: none;
+  transition: all 0.5s;
 }
 
 .nav-links > a:hover {
-  text-decoration: underline;
+  transform: scale(1.1);
+  transition: all 0.5s;
 }
 
 @media only screen and (max-width: 768px) {
