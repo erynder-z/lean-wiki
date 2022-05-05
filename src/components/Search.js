@@ -93,7 +93,7 @@ function Search(props) {
   }, [queries]);
 
   return (
-    <div className={`search ${darkmode === true ? 'dark' : null}`}>
+    <div className={`search ${darkmode ? 'dark' : null}`}>
       <div role="article" className="article-container">
         <h4 className="article-title">{article.title}</h4>
         <div className="article-body">

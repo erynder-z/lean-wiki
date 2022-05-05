@@ -7,7 +7,7 @@ import '../styles/About.css';
 function About(props) {
   const { darkmode } = props;
   return (
-    <div className={`about ${darkmode === true ? 'dark' : null}`}>
+    <div className={`about ${darkmode ? 'dark' : null}`}>
       <div className="about-card">
         <h1>About this app</h1>
         <h4 className="about-title">lean wiki - a no-bs wikipedia client </h4>

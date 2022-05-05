@@ -83,7 +83,7 @@ function Glance(props) {
   }, []);
 
   return (
-    <div className={`glance ${darkmode === true ? 'dark' : null}`}>
+    <div className={`glance ${darkmode ? 'dark' : null}`}>
       <div className="glance-main-container">
         {mode === 'featured' ? (
           <div>

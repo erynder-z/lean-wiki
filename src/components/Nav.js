@@ -6,7 +6,7 @@ function Nav(props) {
   const { darkmode } = props;
 
   return (
-    <nav className={`${darkmode === true ? 'dark' : null}`}>
+    <nav className={`${darkmode ? 'dark' : null}`}>
       <h3>lean wiki</h3>
       <ul className="nav-links">
         <Link to="/">Home</Link>
